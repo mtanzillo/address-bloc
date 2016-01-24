@@ -96,7 +96,7 @@ index of the entry, then the array should be returned.
 =end
 
     @address_book.entries.each_with_index do |value, index|
-      if number = index
+      if number == index
         puts value
       else
         puts "Enter a valid entry number"
