@@ -88,24 +88,19 @@ class MenuController
     puts "Please enter the entry number"
 
     print "number: "
-    number = gets.chomp
+    number = gets.chomp.to_i
 
+    if (number > 0) && (number <= @address_book.entries.length)
+      puts @address_book.entries[number - 1]
+    else
+      puts "Enter a valid entry number"
+    end
+    main_menu
+  end
 =begin
 I want to iterate through each address book entry. If the input entered matches the
 index of the entry, then the array should be returned.
 =end
-
-    @address_book.entries.each_with_index do |value, index|
-      if number == index
-        puts value
-      else
-        puts "Enter a valid entry number"
-        main_menu
-      end
-    end
-  end
-
-  end
 
   def search_entries
   end
@@ -134,3 +129,4 @@ index of the entry, then the array should be returned.
       entry_submenu(entry)
     end
   end
+end
