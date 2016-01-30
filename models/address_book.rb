@@ -50,5 +50,9 @@ def add_entry(name, phone_number, email)
 
      return nil
    end
+   
+     def iterative_search
+     end
+
 
 end

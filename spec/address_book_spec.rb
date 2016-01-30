@@ -132,6 +132,9 @@ RSpec.describe AddressBook do
        expect(entry).to be_nil
      end
 
+      describe "#iterative_search" do
+        it "searches AddressBook for a match"
+      end
 
 
   end
