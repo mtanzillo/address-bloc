@@ -14,7 +14,9 @@ class MenuController
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
-    puts "5 - Exit"
+    puts "5 - Destroy all entries"
+    puts "6 - Exit"
+
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -37,6 +39,10 @@ class MenuController
       read_csv
       main_menu
     when 5
+      system "clear"
+      destroy_entries
+      main_menu
+    when 6
       puts "Good-bye!"
 
       exit(0)
@@ -158,6 +164,14 @@ class MenuController
     rescue
       puts "#{file_name} is not a valid CSV file, please enter the name of a valid CSV file"
       read_csv
+    end
+  end
+
+  def destroy_entries
+    @address_book.entries.each do |entry|
+      entry.delete
+
+      puts "All entries have been deleted"
     end
   end
 
