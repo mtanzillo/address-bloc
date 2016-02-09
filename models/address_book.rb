@@ -51,15 +51,14 @@ def add_entry(name, phone_number, email)
      return nil
    end
 
-     def iterative_search(name)
-       @entries.each do |entry|
-         if name == entry.name
-         puts name
-       else
-        nil
+   def iterative_search(name)
+     @entries.each do |entry|
+       if name == entry.name
+         return entry
+       end
      end
+     nil
    end
- end
 
 
 end
