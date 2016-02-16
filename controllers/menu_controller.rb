@@ -168,12 +168,12 @@ class MenuController
   end
 
   def destroy_entries
-    @address_book.entries.each do |entry|
-      entry.delete
-
-      puts "All entries have been deleted"
+    @address_book.entries.delete_if do |entry|
+      entry > @address_book.entries.length
     end
+      puts "All entries have been deleted"
   end
+  # how to delete all?, delete_if?
 
   def entry_submenu(entry)
     puts "n - next entry"
