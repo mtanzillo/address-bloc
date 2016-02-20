@@ -169,7 +169,7 @@ class MenuController
 
   def destroy_entries
     @address_book.entries.delete_if do |entry|
-      entry > @address_book.entries.length
+      true
     end
       puts "All entries have been deleted"
   end
